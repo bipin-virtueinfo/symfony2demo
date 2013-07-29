@@ -1,0 +1,7 @@
+parameters:
+#    admin_category.example.class: Admin\CategoryBundle\Example
+
+services:
+#    admin_category.example:
+#        class: %admin_category.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,39 @@
+Admin\UserBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Admin\UserBundle\Entity\UserRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        firstname:
+            type: string
+            length: 255
+        lastname:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        salt:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        avtar_image:
+            type: string
+            length: 255
+        created:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updated:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+    lifecycleCallbacks: {  }

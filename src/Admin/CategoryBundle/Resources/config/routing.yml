@@ -1,0 +1,12 @@
+admin_category_homepage:
+    pattern:  /category
+    defaults: { _controller: AdminCategoryBundle:Default:index }
+
+category_list:
+    pattern:  /category
+    defaults: { _controller: AdminCategoryBundle:Default:index }
+
+add_category:
+    pattern:  /category/addCategory
+    defaults: { _controller: AdminCategoryBundle:Default:add }
+

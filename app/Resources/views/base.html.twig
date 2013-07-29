@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% include 'BraincraftedBootstrapBundle::_stylesheets.html.twig' %}
+    </head>
+    {% include 'BraincraftedBootstrapBundle::_javascripts.html.twig' %}
+    <script type="text/javascript" src="/js/common.js"></script>
+
+    <body>
+        <div class="page-header row-fluid">
+        <div class="span1"></div>
+        <div class="span9"></div>
+        <div class="container">
+            {% include '::menu.html.twig' %}
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </div>
+    </body>
+</html>

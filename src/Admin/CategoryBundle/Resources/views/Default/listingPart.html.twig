@@ -1,0 +1,35 @@
+{% include '::hiddenPart.html.twig' %}
+{% include '::searchPart.html.twig' %}
+<div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th>{{ 'Title' }}</th>
+            <th>{{ "Action" }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% if listObject|length > 0 %}
+                {% for object in listObject %}
+                <tr>
+                    <td></td>
+                    <td>{{ object.title }}</td>
+                    <td><a href="{{ path('add_category') }}?id={{ object.id }}">{{ "Edit" }}</a></td>
+                </tr>
+                {% endfor %}
+          {% else %}
+              <tr>
+                <td colspan="7"><div class="alert alert-info">No records found.</div></td>
+              </tr>
+          {% endif %}
+            <tr>
+              <td colspan="7"><a href="{{ path('add_category') }}">{{ "Add category" }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+  <div id="listing_paging">
+    {% include '::paging.html.twig' with {'listObject' : listObject} %}
+  </div>
+</div>

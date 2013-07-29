@@ -1,0 +1,49 @@
+Admin\CategoryBundle\Entity\Category:
+    type: entity
+    table: Category
+    repositoryClass: Admin\CategoryBundle\Entity\CategoryRepository
+    gedmo:
+      tree:
+        type: nested
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        title:
+            type: string
+            length: '64'
+        lft:
+            type: integer
+            gedmo:
+              - treeLeft
+        rgt:
+            type: integer
+            gedmo:
+              - treeRight
+        root:
+            type: integer
+            nullable: true
+            gedmo:
+              - treeRoot
+        lvl:
+            type: integer
+            gedmo:
+              - treeLevel
+    manyToOne:
+        parent:
+            targetEntity: Admin\CategoryBundle\Entity\Category
+            inversedBy: children
+            joinColumn:
+                name: parent_id
+                referencedColumnName: id
+                onDelete: SET NULL
+            gedmo:
+                - treeParent
+    oneToMany:
+        children:
+            targetEntity: Admin\CategoryBundle\Entity\Category
+            mappedBy: parent
+            orderBy:
+                lft: ASC

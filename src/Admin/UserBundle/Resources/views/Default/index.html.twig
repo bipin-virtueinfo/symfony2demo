@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<section id="tables">
+    <div id="contentlisting">
+      {% include 'AdminUserBundle:Default:listingPart.html.twig' with {'listObject' : listObject} %}
+  </div>
+</section>
+{% endblock %}

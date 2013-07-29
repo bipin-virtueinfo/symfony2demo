@@ -1,0 +1,12 @@
+user_list:
+    pattern:  /admin/userlist
+    defaults: { _controller: AdminUserBundle:Default:index }
+
+add_user:
+    pattern:  /admin/addUser
+    defaults: { _controller: AdminUserBundle:Default:add }
+    prefix:   /admin
+
+root:
+    pattern: /
+    defaults: { _controller: AdminUserBundle:Default:index, path: /admin, permanent: true}

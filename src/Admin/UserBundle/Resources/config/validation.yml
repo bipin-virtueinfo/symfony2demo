@@ -1,0 +1,17 @@
+Admin\UserBundle\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    properties:
+        firstname:
+            - NotBlank: { message: 'Enter first name' }
+            - Length:
+                min: 5
+        lastname:
+            - NotBlank: { message: 'Enter last name' }
+            - Length:
+                min: 5
+        email:
+            - Email: ~
+            - Length:
+                min: 5
+
